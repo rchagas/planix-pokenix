@@ -1,17 +1,12 @@
 body{
-    background-color: black;
+    background-color:gainsboro;
 }
+
 header{
-    padding: 20px;
-    margin: 0 auto;
-    text-align: center;
-    float: none;
+    background: linear-gradient( dimgray,  gainsboro);
+    padding: 30px 30px 30px 30px;
 }
-img{
-    size: 5%;
-    height: 5%;
-    box-sizing: border-box;
-}
+
 button{
     font-size: 30px;
     padding: 10px 30px 10px 30px;
@@ -27,4 +22,14 @@ button{
     box-shadow: inset 0 1px 1px #809fff;
     border-color: #00134d #00134d #00134d;
 
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
 }

@@ -4,15 +4,48 @@
 	<meta charset="utf-8">
 	<title>Pokénix</title>
 	<link rel="shortcut icon" href="https://static.thenounproject.com/png/19118-200.png" type="image/x-icon"/>
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<header><img src="images/logo.png"></header>
-	<div>
-    <a href="images/logo.png">	<button id="request"  >Gianne</button></a>
-    	<div id="bio"></div>
-	</div>
+		<header>
+			<div class="row">
+				<div class="col-lg-6">
+					<a class="blog-header-logo text-dark" href="#"><img src="images/logo.png"></a>
+				</div>
+				  <div class="col-lg-6">
+						<div class="input-group">
+						  <input type="text" class="form-control" placeholder="Encontre eles!!!">
+						  <span class="input-group-btn">
+							<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						  </span>
+						</div><!-- /input-group -->
+					</div>
+				</div>
+		</header>
+		<table class="table" id="pokeResult">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="4" id="pokeResult-img"></td>
+					<td >Numero:</td>
+					<td id="pokeResult-num"></td>
+				</tr>
+				<tr>
+					<td>Nome:</td>
+					<td id="pokeResult-name"></td>
+				</tr>
+				<tr>
+					<td rowspan="2">Tipo:</td>
+					<td id="pokeResult-type1"></td>
+					<td id="pokeResult-type2"></td>
+				</tr>				
+			</tbody>
+		</table>
+
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="js/index.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
