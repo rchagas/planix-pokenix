@@ -12,22 +12,23 @@ let tab = document.getElementById('pokeResult');
         box.value = '';
 
         for (let x of busca) {
-            axios.get(url + x).then(function (result) {
+            axios.get(url + x.toLowerCase()).then(function (result) {
                 console.log(result.data.name);
                 let num;
                 if (result.data.id < 100) {
                     if (result.data.id < 10)
                         num = '00' + result.data.id;
                     else num = '0' + result.data.id;
-                }
+                }else num = result.data.id;
                  table += '<tr><td rowspan="3"><img src = '
-                    + url_img + num + '.png ></td><td>Numero:</td><td><h4>'
-                    + num + '</h4></td></tr><tr><td>Nome:</td><td><h4>'
-                    + result.data.name.toUpperCase() + '</h4></td></tr><tr><td>Tipo:</td><td><h4>'
-                    + result.data.types[0].type.name.toUpperCase() + '</h4></td>';
-                /*if (result.data.types[1] !== undefined)
-                        '<td"><h4>' + result.data.types[1].type.name.toUpperCase() + '</h4></td>';*/
-                table+= '</tr>'
+                    + url_img + num + '.png ></td><td>Numero:</td><td colspan="2"><h4>'
+                    + num + '</h4></td></tr><tr><td>Nome:</td><td colspan="2"><h4>'
+                    + result.data.name.toUpperCase() + '</h4></td></tr><tr><td>Tipo:</td>'
+                if (result.data.types[1] !== undefined){
+                        table +='<td><h4>'+ result.data.types[0].type.name.toUpperCase() 
+                        + '</h4></td><td><h4>' + result.data.types[1].type.name.toUpperCase() + '</h4></td></tr>';
+                }else {table+= '<td colspan="2"><h4>'+ result.data.types[0].type.name.toUpperCase() 
+                + '</h4></td></tr>'};
                 console.log(table);
                 tab.childNodes[3].innerHTML = table;
             });
